@@ -57,9 +57,7 @@ html {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-size: cover;
-    background-position: center;
+    background: url('../images/Academic_Buildings_of_the_University_of_Barishal.jpg') center center/cover no-repeat;
     background-attachment: fixed;
     position: relative;
     min-height: 100vh;
