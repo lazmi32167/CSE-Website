@@ -1,0 +1,729 @@
+/* Custom CSS for CSE Department Website */
+
+/* Global Styles */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-section h1 {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-section p {
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-buttons {
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Styles */
+.section-title {
+    font-weight: bold;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Stats Section */
+.stats-section {
+    background: var(--light-color);
+}
+
+.stat-card {
+    padding: 2rem 1rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+/* About Section */
+.about-section {
+    padding: 5rem 0;
+}
+
+.about-image img {
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Programs Section */
+.program-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+.program-card .card-body {
+    padding: 2rem;
+}
+
+/* Research Section */
+.research-section {
+    padding: 5rem 0;
+}
+
+.research-card {
+    padding: 2rem 1rem;
+    transition: transform 0.3s ease;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+}
+
+.research-card h5 {
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+}
+
+/* News Section */
+.news-section {
+    background: var(--light-color);
+}
+
+.news-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+.news-card .badge {
+    font-size: 0.75rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-color) !important;
+}
+
+.footer h5, .footer h6 {
+    color: white;
+    font-weight: 600;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .stat-card h3 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 0.25rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .stats-section .col-md-3 {
+        margin-bottom: 2rem;
+    }
+    
+    .research-card,
+    .stat-card {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Custom Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button Hover Effects */
+.btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Card Hover Effects */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+}
+
+.scroll-to-top:hover {
+    background: var(--dark-color);
+    transform: translateY(-3px);
+}
+
+/* Page Header Styles */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
+    color: white;
+    margin-top: 76px;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+.timeline-marker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    z-index: 1;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Faculty Card Styles */
+.faculty-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faculty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.faculty-image {
+    transition: transform 0.3s ease;
+}
+
+.faculty-card:hover .faculty-image {
+    transform: scale(1.05);
+}
+
+/* Program Card Styles */
+.program-overview-card,
+.certificate-card,
+.admission-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-overview-card:hover,
+.certificate-card:hover,
+.admission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Research Area Card Styles */
+.research-area-card {
+    transition: transform 0.3s ease;
+}
+
+.research-area-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Project Card Styles */
+.project-card {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Facility Card Styles */
+.facility-card {
+    padding: 1rem;
+}
+
+.facility-card img {
+    transition: transform 0.3s ease;
+}
+
+.facility-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Student Organization Card Styles */
+.organization-card,
+.achievement-card {
+    transition: transform 0.3s ease;
+}
+
+.organization-card:hover,
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Contact Form Styles */
+.contact-form .form-control {
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Contact Card Styles */
+.contact-card {
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Location Card Styles */
+.location-card {
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Event Card Styles */
+.event-card {
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.date-box {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* FAQ Styles */
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.accordion-button:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Map Placeholder */
+.map-placeholder {
+    background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
+                linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
+                linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Badge Styles */
+.badge {
+    font-weight: 500;
+}
+
+/* Support Service Card */
+.support-service {
+    transition: transform 0.3s ease;
+}
+
+.support-service:hover {
+    transform: translateY(-3px);
+}
+
+/* Value Card Styles */
+.value-card {
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Leadership Card Styles */
+.leadership-card {
+    transition: transform 0.3s ease;
+}
+
+.leadership-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Achievement Item Styles */
+.achievement-item {
+    padding: 2rem 1rem;
+    transition: transform 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Mission Item Styles */
+.mission-item {
+    padding: 0.5rem 0;
+}
+
+/* Stat Item Styles */
+.stat-item {
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Resource Card Styles */
+.resource-card {
+    transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Timeline Responsive */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0%;
+    }
+    
+    .timeline-item::after {
+        left: 21px;
+    }
+    
+    .timeline-item:nth-child(even)::after {
+        left: 21px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .footer,
+    .scroll-to-top {
+        display: none;
+    }
+    
+    .page-header {
+        margin-top: 0;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .card {
+        break-inside: avoid;
+    }
+}
